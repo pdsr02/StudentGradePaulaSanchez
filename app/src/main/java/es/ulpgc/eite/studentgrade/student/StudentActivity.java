@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,9 @@ public class StudentActivity
   public static String TAG = "StudentGrade.StudentActivity";
 
   private StudentContract.Presenter presenter;
+
+  Button outstanding, mention, pass;
+  TextView studentGrade;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

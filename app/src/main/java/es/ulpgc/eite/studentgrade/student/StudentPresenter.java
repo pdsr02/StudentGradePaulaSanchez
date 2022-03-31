@@ -28,7 +28,6 @@ public class StudentPresenter implements StudentContract.Presenter {
   @Override
   public void onStart() {
     Log.e(TAG, "onStart()");
-
     // TODO: include code here if is necessary
 
   }
@@ -48,7 +47,6 @@ public class StudentPresenter implements StudentContract.Presenter {
     // use passed state if is necessary
     GradeToStudentState savedState = getStateFromNextScreen();
     if (savedState != null) {
-
       // TODO: include code here if is necessary
 
     }
@@ -82,22 +80,21 @@ public class StudentPresenter implements StudentContract.Presenter {
 
   @Override
   public void onOutstandingGradeBtnClicked() {
-
     // TODO: include code here if is necessary
-
+    StudentToGradeState utstandingGrade = new StudentToGradeState();
+    view.get().navigateToNextScreen();
   }
 
   @Override
   public void onMentionGradeBtnClicked() {
-
     // TODO: include code here if is necessary
-
+    view.get().navigateToNextScreen();
   }
 
   @Override
   public void onPassGradeBtnClicked() {
-
     // TODO: include code here if is necessary
+    view.get().navigateToNextScreen();
 
   }
 
