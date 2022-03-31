@@ -1,5 +1,7 @@
 package es.ulpgc.eite.studentgrade.grade;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.studentgrade.app.AppMediator;
@@ -25,32 +27,34 @@ public class GradePresenter implements GradeContract.Presenter {
 
   @Override
   public void onStart() {
-    // Log.e(TAG, "onStart()");
+    Log.e(TAG, "onStart()");
 
     // TODO: include code here if is necessary
 
     // use passed state if is necessary
     StudentToGradeState savedState = getStateFromPreviousScreen();
     if (savedState != null) {
-
       // TODO: include code here if is necessary
+
 
     }
 
     // TODO: include code here if is necessary
-
+    state.option1 = model.getOption1();
+    state.option2 = model.getOption2();
+    view.get().onDataUpdated(state);
   }
 
   @Override
   public void onRestart() {
-    // Log.e(TAG, "onRestart()");
+    Log.e(TAG, "onRestart()");
 
     // TODO: include code here if is necessary
   }
 
   @Override
   public void onResume() {
-    // Log.e(TAG, "onResume()");
+    Log.e(TAG, "onResume()");
 
     // TODO: include code here if is necessary
 
@@ -80,15 +84,18 @@ public class GradePresenter implements GradeContract.Presenter {
 
   @Override
   public void onHigherGradeBtnClicked() {
-
     // TODO: include code here if is necessary
+    GradeToStudentState grade = new GradeToStudentState();
+    grade.data = state.option1;
+    passStateToPreviousScreen(grade);
+    view.get().navigateToPreviousScreen();
 
   }
 
   @Override
   public void onLowerGradeBtnClicked() {
-
     // TODO: include code here if is necessary
+    view.get().navigateToPreviousScreen();
 
   }
 

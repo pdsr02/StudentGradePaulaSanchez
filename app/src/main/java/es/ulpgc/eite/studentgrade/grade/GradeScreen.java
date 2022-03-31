@@ -20,8 +20,8 @@ public class GradeScreen {
     AppMediator mediator = AppMediator.getInstance();
     GradeContract.Presenter presenter = new GradePresenter(mediator);
 
-    String data = context.get().getString(R.string.default_student_grade);
-    GradeContract.Model model = new GradeModel(data);
+    String[] nota = context.get().getResources().getStringArray(R.array.data);
+    GradeContract.Model model = new GradeModel(nota);
 
     presenter.injectModel(model);
     presenter.injectView(new WeakReference<>(view));

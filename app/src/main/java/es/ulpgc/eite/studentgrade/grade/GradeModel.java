@@ -7,16 +7,21 @@ public class GradeModel implements GradeContract.Model {
 
   public static String TAG = "StudentGrade.GradeModel";
 
-  private String data;
+  private final String[] data;
+  private int dataIndex;
 
-  public GradeModel(String data) {
+  public GradeModel(String[] data) {
     this.data = data;
   }
 
   @Override
-  public String getStoredData() {
-    // Log.e(TAG, "getStoredData()");
-    return data;
+  public String getOption1() {
+    return data[dataIndex+1];
+  }
+
+  @Override
+  public String getOption2() {
+    return  data[ dataIndex+2];
   }
 
   @Override

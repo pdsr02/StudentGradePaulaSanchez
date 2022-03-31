@@ -38,7 +38,8 @@ public interface GradeContract {
   }
 
   interface Model {
-    String getStoredData();
+    String getOption1();
+    String getOption2();
 
     void onRestartScreen(String data);
 

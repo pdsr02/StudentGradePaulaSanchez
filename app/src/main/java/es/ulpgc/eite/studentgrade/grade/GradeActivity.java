@@ -52,7 +52,6 @@ public class GradeActivity
   public void onBackPressed() {
     super.onBackPressed();
     Log.e(TAG, "onBackPressed()");
-
     presenter.onBackPressed();
   }
 
@@ -79,7 +78,6 @@ public class GradeActivity
 
   public void onLowerGradeBtnClicked(View view) {
     presenter.onLowerGradeBtnClicked();
-
   }
 
   @Override
@@ -87,9 +85,8 @@ public class GradeActivity
     Log.e(TAG, "onDataUpdated()");
 
     // deal with the data
-    String[] data = viewModel.data.split(",");
-    ((TextView) findViewById(R.id.btnLowerGrade)).setText(data[0]);
-    ((TextView) findViewById(R.id.btnHigherGrade)).setText(data[1]);
+    ((TextView) findViewById(R.id.btnLowerGrade)).setText(viewModel.option1);
+    ((TextView) findViewById(R.id.btnHigherGrade)).setText(viewModel.option2);
   }
 
   @Override

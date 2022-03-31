@@ -81,21 +81,28 @@ public class StudentPresenter implements StudentContract.Presenter {
   @Override
   public void onOutstandingGradeBtnClicked() {
     // TODO: include code here if is necessary
-    StudentToGradeState utstandingGrade = new StudentToGradeState();
+    StudentToGradeState outstandingGradeState = new StudentToGradeState();
+    outstandingGradeState.data = model.getStoredData();
+    passStateToNextScreen(outstandingGradeState);
     view.get().navigateToNextScreen();
   }
 
   @Override
   public void onMentionGradeBtnClicked() {
     // TODO: include code here if is necessary
+    StudentToGradeState onMentionGradeState = new StudentToGradeState();
+    onMentionGradeState.data = model.getStoredData();
+    passStateToNextScreen(onMentionGradeState);
     view.get().navigateToNextScreen();
   }
 
   @Override
   public void onPassGradeBtnClicked() {
     // TODO: include code here if is necessary
+    StudentToGradeState onPassGradeState = new StudentToGradeState();
+    onPassGradeState.data = model.getStoredData();
+    passStateToNextScreen(onPassGradeState);
     view.get().navigateToNextScreen();
-
   }
 
   private GradeToStudentState getStateFromNextScreen() {

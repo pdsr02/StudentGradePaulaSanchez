@@ -13,5 +13,13 @@
     <string name="default_student_grade">0</string>
     <string name="title_student_grade">Student Grade</string>
 
-
+    <string-array name="data">
+        <item>0</item>
+        <item>10</item>
+        <item>9</item>
+        <item>8</item>
+        <item>7</item>
+        <item>6</item>
+        <item>5</item>
+    </string-array>
 </resources>

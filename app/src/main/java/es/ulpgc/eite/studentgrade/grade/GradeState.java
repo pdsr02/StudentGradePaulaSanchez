@@ -6,4 +6,5 @@ package es.ulpgc.eite.studentgrade.grade;
 public class GradeState extends GradeViewModel {
 
   // put the model state here
+  public int index;
 }

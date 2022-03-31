@@ -16,7 +16,6 @@ public class StudentModel implements StudentContract.Model {
   @Override
   public String getStoredData() {
     // Log.e(TAG, "getStoredData()");
-
     return data;
   }
 
